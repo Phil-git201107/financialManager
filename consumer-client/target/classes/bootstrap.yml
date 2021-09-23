@@ -1,0 +1,15 @@
+spring:
+  application:
+    name: clientconsumer
+  profiles:
+    active: dev
+  cloud:
+    config:
+      uri: http://localhost:8762 #配置中心通訊埠
+      fail-fast: true
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8761/eureka/
+  instance:
+    prefer-ip-address: true

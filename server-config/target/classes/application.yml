@@ -1,0 +1,18 @@
+server:
+  port: 8762
+spring:
+  application:
+    name: configserver
+  profiles:
+    active: native #自本地讀取配置
+  cloud:
+    config:
+      server:
+        native:
+          search-locations: classpath:/shared
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8761/eureka/
+  instance:
+    prefer-ip-address: true
